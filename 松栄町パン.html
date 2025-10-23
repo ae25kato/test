@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="明治中期創業、約120年の歴史を持つ山形のボー.ションドブレ 松栄店。全国パンフェスでベスト8入賞、全国にファンを持つこだわりのパン屋です。">
+    <title>ボー.ションドブレ 松栄店 - 明治中期創業120年の老舗パン屋</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Yu Gothic', '游ゴシック', 'Hiragino Sans', sans-serif;
+            color: #333;
+            line-height: 1.8;
+            background: #fff;
+        }
+
+        /* ヘッダー */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #8B4513;
+            font-family: 'Yu Mincho', '游明朝', serif;
+            letter-spacing: 0.1em;
+        }
+
+        .logo-sub {
+            font-size: 12px;
+            color: #999;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #8B4513;
+        }
+
+        /* メインビジュアル */
+        .hero {
+            height: 550px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 550"><rect fill="%23D4B896" width="1200" height="550"/><text x="600" y="280" font-size="56" fill="white" text-anchor="middle" font-family="serif">焼きたてパンの香り</text></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-family: 'Yu Mincho', '游明朝', serif;
+            margin-bottom: 15px;
+            letter-spacing: 0.15em;
+        }
+
+        .hero-content .subtitle {
+            font-size: 20px;
+            letter-spacing: 0.15em;
+            margin-bottom: 10px;
+        }
+
+        .hero-content .tagline {
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+        }
+
+        /* コンテナ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        /* セクションタイトル */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-family: 'Yu Mincho', '游明朝', serif;
+            margin-bottom: 50px;
+            color: #8B4513;
+            letter-spacing: 0.1em;
+        }
+
+        /* ハイライトバナー */
+        .highlight-banner {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .highlight-banner h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-family: 'Yu Mincho', '游明朝', serif;
+        }
+
+        .highlight-banner p {
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        /* 期間限定バナー */
+        .limited-banner {
+            background: #FFF8DC;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #D4B896;
+            border-radius: 8px;
+            margin-bottom: 60px;
+        }
+
+        .limited-banner h2 {
+            font-size: 28px;
+            color: #8B4513;
+            margin-bottom: 15px;
+        }
+
+        .limited-banner p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* 商品グリッド */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #D4B896 0%, #C9A876 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: #8B4513;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: #D4472C;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        /* SNSセクション */
+        .sns-section {
+            background: #f9f9f9;
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        .sns-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .sns-section p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hashtag {
+            font-size: 28px;
+            color: #8B4513;
+            font-weight: bold;
+        }
+
+        /* 実績セクション */
+        .achievements {
+            background: #f9f9f9;
+            padding: 60px 30px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .achievement-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .achievement-item h4 {
+            font-size: 18px;
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-family: 'Yu Mincho', '游明朝', serif;
+        }
+
+        .achievement-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* お知らせ */
+        .news-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .news-item {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            gap: 20px;
+        }
+
+        .news-date {
+            color: #999;
+            font-size: 14px;
+            min-width: 100px;
+        }
+
+        .news-content {
+            flex: 1;
+            color: #333;
+        }
+
+        /* ストーリーセクション */
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 2;
+        }
+
+        .story-content p {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .story-highlight {
+            background: #FFF8DC;
+            padding: 40px;
+            border-left: 4px solid #8B4513;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        /* 店舗情報 */
+        .shop-info {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .shop-info h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #8B4513;
+            font-family: 'Yu Mincho', '游明朝', serif;
+        }
+
+        .info-row {
+            display: flex;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .info-label {
+            font-weight: bold;
+            width: 140px;
+            color: #666;
+        }
+
+        .info-value {
+            flex: 1;
+            color: #333;
+        }
+
+        /* フッター */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content .subtitle {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 50px 20px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .info-label {
+                width: 100%;
+                font-weight: bold;
+            }
+
+            .highlight-banner h2 {
+                font-size: 24px;
+            }
+
+            .highlight-banner p {
+                font-size: 16px;
+            }
+        }
+
+        /* スムーススクロール */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                ボー.ションドブレ 松栄店
+                <div class="logo-sub">創業120年 / 明治中期創業</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#products">商品紹介</a></li>
+                    <li><a href="#story">ストーリー</a></li>
+                    <li><a href="#achievements">実績</a></li>
+                    <li><a href="#news">お知らせ</a></li>
+                    <li><a href="#access">アクセス</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>伝統と革新のパン作り</h1>
+            <p class="subtitle">パンフェスやイベントにオファー殺到</p>
+            <p class="tagline">全国にファンを持つ山形市郊外の人気パン屋さん</p>
+        </div>
+    </section>
+
+    <!-- ハイライトバナー -->
+    <div class="highlight-banner">
+        <h2>🏆 池袋パン祭り 100軒中ベスト8入賞</h2>
+        <p>全国最大規模のパンイベントで高評価をいただきました<br>
+        ELLEgourmet掲載 / 高島屋日本橋店パンフェス出店</p>
+    </div>
+
+    <!-- 期間限定商品 -->
+    <div class="container">
+        <div class="limited-banner">
+            <h2>🍞 今月の期間限定商品が登場！</h2>
+            <p>今月しか食べられない特別なパンをぜひお試しください / 毎日80種類以上のパンが並びます</p>
+        </div>
+
+        <!-- 人気商品 -->
+        <section id="products">
+            <h2 class="section-title">人気商品</h2>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">庄内豚の角煮焼きカレーパン</div>
+                    <div class="product-info">
+                        <span class="product-badge">土日祝限定</span>
+                        <div class="product-name">庄内豚の角煮焼きカレーパン</div>
+                        <div class="product-price">¥302</div>
+                        <p class="product-description">ELLEgourmet掲載の看板商品。ブランド豚「庄内豚」の大きな角煮がまるっと入った、食べ応えのあるカレーパン。日本カレーパン協会会長推薦。</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">パンプリークロワッサン</div>
+                    <div class="product-info">
+                        <span class="product-badge">こだわりバター使用</span>
+                        <div class="product-name">パンプリークロワッサン</div>
+                        <div class="product-price">¥432</div>
+                        <p class="product-description">フランス西部パンプリー村のAOP認定発酵バター使用。帝国ホテルでも使われる希少なバター。濃厚でありながらくどくない口当たり。</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">月山丸～あんこ～</div>
+                    <div class="product-info">
+                        <span class="product-badge">地元酒造コラボ</span>
+                        <div class="product-name">月山丸～あんこ～</div>
+                        <div class="product-price">¥648</div>
+                        <p class="product-description">河北町「和田酒造」の大吟醸 月山丸の酒種を利用。芳醇な香りと、しっとりソフトな口当たりが美味しいと評判。</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">クロワッサン</div>
+                    <div class="product-info">
+                        <div class="product-name">クロワッサン</div>
+                        <div class="product-price">¥216</div>
+                        <p class="product-description">外パリッ中ふわ食感が美味！海洋酵母使用でソフトな食感と爽やかな香りが特徴です。</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">ゴルゴンゾーラとはちみつのカンパーニュ</div>
+                    <div class="product-info">
+                        <div class="product-name">ゴルゴンゾーラとはちみつのカンパーニュ</div>
+                        <div class="product-price">¥345</div>
+                        <p class="product-description">ハード系のパンにゴルゴンゾーラがよく合います。はちみつとの絶妙なバランス。</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">Berry.4</div>
+                    <div class="product-info">
+                        <div class="product-name">Berry.4</div>
+                        <div class="product-price">¥302</div>
+                        <p class="product-description">ラズベリーなど4種類のベリーと中に入ったカスタードのバランスがベストマッチ。</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">国産牛の焼きカレーパン</div>
+                    <div class="product-info">
+                        <div class="product-name">国産牛の焼きカレーパン</div>
+                        <div class="product-price">¥302</div>
+                        <p class="product-description">牛すじ入りの人気カレーパン。焼きカレーパンならではのサクサク食感。</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">野菜のフォカッチャ</div>
+                    <div class="product-info">
+                        <div class="product-name">野菜のフォカッチャ</div>
+                        <div class="product-price">¥302</div>
+                        <p class="product-description">野菜たっぷりで食べ応えあり。ヘルシーで満足感のある一品。</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">はちみつクイニー・アマン</div>
+                    <div class="product-info">
+                        <div class="product-name">はちみつクイニー・アマン</div>
+                        <div class="product-price">¥280</div>
+                        <p class="product-description">程よい硬さがちょうどいいクイニ―・アマン。はちみつの優しい甘さ。</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">ホットサンド（たまご）</div>
+                    <div class="product-info">
+                        <div class="product-name">ホットサンド（たまご）</div>
+                        <div class="product-price">¥237</div>
+                        <p class="product-description">食べやすいようにと、独特なカタチになったホットサンド。モーニングやランチに最適。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SNSセクション -->
+    <section class="sns-section">
+        <h3>ご購入いただきました商品のお写真など</h3>
+        <p>ぜひタグ付けしてUPしてください！</p>
+        <div class="hashtag">#ボーションドブレ</div>
+    </section>
+
+    <!-- 実績セクション -->
+    <section class="achievements" id="achievements">
+        <div class="container">
+            <h2 class="section-title">全国での活躍</h2>
+            <div class="achievements-grid">
+                <div class="achievement-item">
+                    <h4>池袋パン祭り</h4>
+                    <p>全国最大規模のパンイベントで100軒中ベスト8に入賞</p>
+                </div>
+                <div class="achievement-item">
+                    <h4>ELLEgourmet掲載</h4>
+                    <p>全国版グルメ雑誌で「庄内豚の角煮焼きカレーパン」が紹介されました</p>
+                </div>
+                <div class="achievement-item">
+                    <h4>高島屋日本橋店</h4>
+                    <p>パンフェス出店で日本カレーパン協会会長から推薦を受けました</p>
+                </div>
+                <div class="achievement-item">
+                    <h4>全国イベント出店</h4>
+                    <p>パンフェスからオファー殺到。1ヵ月の半分以上イベントに出かけることも</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ブランドストーリー -->
+    <div class="container" id="story">
+        <h2 class="section-title">私たちのストーリー</h2>
+        <div class="story-content">
+            <p>
+                ボー.ションドブレの前身「森谷製パン」として河北町で開業したのは、今から約120年前、明治中期のこと。<br>
+                現在のオーナーは4代目、20年前に山形市七日町に「ボー.ションドブレ」をオープンしました。
+            </p>
+            
+            <div class="story-highlight">
+                <p style="margin-bottom: 15px;"><strong>こだわりの製法</strong></p>
+                <p style="font-size: 15px;">パン酵母は、海水から作られる海洋酵母をメインに、パンの種類によって使い分けています。海洋酵母は、ソフトな食感と爽やかな香りが特徴。地元河北町「和田酒造」の銘酒を使った珍しいパンも製造しています。</p>
+            </div>
+
+            <p>
+                2016年に山形市郊外へ移転。サラリーマンからファミリー層まで広くご利用いただきたいという思いから、<br>
+                2階にイートインスペースも設けました。
+            </p>
+            
+            <p>
+                現在では有名百貨店の物産展やパンフェスへの出店が評判を呼び、全国にファンを持つパン屋として成長。<br>
+                通販対応していないため、購入はお店かイベントのみとなっています。
+            </p>
+
+            <p style="font-weight: bold; color: #8B4513; margin-top: 40px;">
+                これからはもっと県産食材にこだわったパンを出していきたい<br>
+                ー オーナー 森谷
+            </p>
+        </div>
+    </div>
+
+    <!-- お知らせ -->
+    <div class="container" id="news">
+        <h2 class="section-title">お知らせ</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <span class="news-date">2025.10.20</span>
+                <span class="news-content">11月の都内催事スケジュール更新 - 新宿高島屋、池袋西武百貨店に出店予定</span>
+            </li>
+            <li class="news-item">
+                <span class="news-date">2025.10.15</span>
+                <span class="news-content">イートインスペース2階にて期間限定メニュー登場</span>
+            </li>
+            <li class="news-item">
+                <span class="news-date">2025.10.01</span>
+                <span class="news-content">10月の期間限定商品「栗とマロンクリームのデニッシュ」好評販売中！</span>
+            </li>
+            <li class="news-item">
+                <span class="news-date">2025.09.25</span>
+                <span class="news-content">「庄内豚の角煮焼きカレーパン」土日祝日限定で販売中 ※個数限定</span>
+            </li>
+            <li class="news-item">
+                <span class="news-date">2025.09.10</span>
+                <span class="news-content">秋の新商品「無花果とクルミのカンパーニュ」発売開始</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 店舗情報 -->
+    <div class="container" id="access">
+        <h2 class="section-title">店舗案内</h2>
+        <div class="shop-info">
+            <h3>ボー.ションドブレ 松栄店</h3>
+            <div class="info-row">
+                <span class="info-label">住所</span>
+                <span class="info-value">山形県山形市松栄○-○-○</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">営業時間</span>
+                <span class="info-value">8:00〜19:00（売り切れ次第閉店）</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">定休日</span>
+                <span class="info-value">水曜日</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">電話番号</span>
+                <span class="info-value">023-XXX-XXXX</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">駐車場</span>
+                <span class="info-value">あり（店舗前に駐車スペース完備）</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">イートイン</span>
+                <span class="info-value">2階にイートインスペースあり（コーヒー、紅茶、スープなどのドリンクメニューもご用意）</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">商品数</span>
+                <span class="info-value">毎日80種類以上のパンが並びます（焼き上がり時間や限定パンもあります）</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">アクセス</span>
+                <span class="info-value">
+                    山形駅から車で約15分<br>
+                    蔵王温泉・御釜からの帰り道に最適<br>
+                    ※山形駅からは車移動をおすすめします
+                </span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">購入方法</span>
+                <span class="info-value">店舗販売またはイベント出店時のみ（通販対応なし）<br>※山形うまいずサイトでの取り扱いあり</span>
+            </div>
+        </div>
