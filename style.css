@@ -1,0 +1,460 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Yu Gothic', '游ゴシック', 'Hiragino Sans', sans-serif;
+        color: #333;
+        line-height: 1.8;
+        background: #fff;
+    }
+
+    /* ヘッダー */
+    header {
+        background: #fff;
+        border-bottom: 1px solid #e5e5e5;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #8B4513;
+        font-family: 'Yu Mincho', '游明朝', serif;
+        letter-spacing: 0.1em;
+    }
+
+    .logo-sub {
+        font-size: 12px;
+        color: #999;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 35px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 15px;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #8B4513;
+    }
+
+    /* メインビジュアル */
+    .hero {
+        height: 550px;
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 550"><rect fill="%23D4B896" width="1200" height="550"/><text x="600" y="280" font-size="56" fill="white" text-anchor="middle" font-family="serif">焼きたてパンの香り</text></svg>');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+
+        
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+        font-family: 'Yu Mincho', '游明朝', serif;
+        margin-bottom: 15px;
+        letter-spacing: 0.15em;
+
+        
+            
+    
+    }
+
+    .hero-content .subtitle {
+        font-size: 20px;
+        letter-spacing: 0.15em;
+        margin-bottom: 10px;
+    }
+
+    .hero-content .tagline {
+        font-size: 16px;
+        letter-spacing: 0.1em;
+        opacity: 0.9;
+    }
+
+    /* コンテナ */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 30px;
+    }
+
+    /* セクションタイトル */
+    .section-title {
+        text-align: center;
+        font-size: 32px;
+        font-family: 'Yu Mincho', '游明朝', serif;
+        margin-bottom: 50px;
+        color: #8B4513;
+        letter-spacing: 0.1em;
+    }
+
+    /* ハイライトバナー */
+    .highlight-banner {
+        background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+        color: white;
+        padding: 50px 30px;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .highlight-banner h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-family: 'Yu Mincho', '游明朝', serif;
+    }
+
+    .highlight-banner p {
+        font-size: 18px;
+        line-height: 2;
+    }
+
+    /* 期間限定バナー */
+    .limited-banner {
+        background: #FFF8DC;
+        padding: 30px;
+        text-align: center;
+        border: 2px solid #D4B896;
+        border-radius: 8px;
+        margin-bottom: 60px;
+    }
+
+    .limited-banner h2 {
+        font-size: 28px;
+        color: #8B4513;
+        margin-bottom: 15px;
+    }
+
+    .limited-banner p {
+        font-size: 16px;
+        color: #666;
+    }
+
+    /* 商品グリッド */
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+        margin-top: 40px;
+    }
+
+    .product-card {
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .product-image {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(135deg, #D4B896 0%, #C9A876 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .product-info {
+        padding: 25px;
+    }
+
+    .product-name {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .product-price {
+        font-size: 18px;
+        color: #8B4513;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .product-description {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .product-badge {
+        display: inline-block;
+        background: #D4472C;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    /* SNSセクション */
+    .sns-section {
+        background: #f9f9f9;
+        padding: 60px 30px;
+        text-align: center;
+    }
+
+    .sns-section h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .sns-section p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .hashtag {
+        font-size: 28px;
+        color: #8B4513;
+        font-weight: bold;
+    }
+
+    /* 実績セクション */
+    .achievements {
+        background: #f9f9f9;
+        padding: 60px 30px;
+    }
+
+    .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .achievement-item {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .achievement-item h4 {
+        font-size: 18px;
+        color: #8B4513;
+        margin-bottom: 15px;
+        font-family: 'Yu Mincho', '游明朝', serif;
+    }
+
+    .achievement-item p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* お知らせ */
+    .news-list {
+        list-style: none;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .news-item {
+        padding: 20px 0;
+        border-bottom: 1px solid #e5e5e5;
+        display: flex;
+        gap: 20px;
+    }
+
+    .news-date {
+        color: #999;
+        font-size: 14px;
+        min-width: 100px;
+    }
+
+    .news-content {
+        flex: 1;
+        color: #333;
+    }
+
+    /* ストーリーセクション */
+    .story-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 2;
+    }
+
+    .story-content p {
+        margin-bottom: 30px;
+        font-size: 16px;
+    }
+
+    .story-highlight {
+        background: #FFF8DC;
+        padding: 40px;
+        border-left: 4px solid #8B4513;
+        margin: 40px 0;
+        text-align: left;
+    }
+
+    /* 店舗情報 */
+    .shop-info {
+        background: #f9f9f9;
+        padding: 40px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .shop-info h3 {
+        font-size: 24px;
+        margin-bottom: 25px;
+        color: #8B4513;
+        font-family: 'Yu Mincho', '游明朝', serif;
+    }
+
+    .info-row {
+        display: flex;
+        padding: 15px 0;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .info-label {
+        font-weight: bold;
+        width: 140px;
+        color: #666;
+    }
+
+    .info-value {
+        flex: 1;
+        color: #333;
+    }
+
+    /* フッター */
+    footer {
+        background: #333;
+        color: white;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+        .header-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        nav ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero {
+            height: 400px;
+        }
+
+        .hero-content h1 {
+            font-size: 32px;
+        }
+
+        .hero-content .subtitle {
+            font-size: 16px;
+        }
+
+        .container {
+            padding: 50px 20px;
+        }
+
+        .section-title {
+            font-size: 26px;
+        }
+
+        .products-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .info-row {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .info-label {
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .highlight-banner h2 {
+            font-size: 24px;
+        }
+
+        .highlight-banner p {
+            font-size: 16px;
+        }
+    }
+
+    /* スムーススクロール */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    
